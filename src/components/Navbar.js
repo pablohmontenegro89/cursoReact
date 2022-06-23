@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Collapse } from 'bootstrap-4-react';
+import Cart from './CartWidget'
 
 export default class App extends Component {
   render() {
     return (
       <Navbar expand="lg" light bg="light">
-        <Navbar.Brand href="#">Tienda de Pablo</Navbar.Brand>
+        <Navbar.Brand href="#">Tienda de Pablo
+        <Cart/>
+        </Navbar.Brand>
         <Navbar.Toggler target="#navbarText" />
         <Collapse navbar id="navbarText">
           <Navbar.Nav mr="auto">
