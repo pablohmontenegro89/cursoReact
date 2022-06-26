@@ -1,10 +1,10 @@
 import './Card.css';
 
-function Card(){
+function Card({product, price}){
     return(
         <section className="card">
-        <h4>Producto</h4>
-        <p>Descripcion</p>
+            <p>{product}</p>
+            <p>{price}</p>
         </section>
     );
 }

@@ -1,0 +1,32 @@
+[
+    {
+        "codigo": 1,
+        "nombre": "Pantalón",
+        "precio": 25000,
+        "stock": 8
+    },
+    {   
+        "codigo": 2,
+        "nombre": "Remera",
+        "precio": 7000,
+        "stock": 26
+    },
+    {   
+        "codigo": 3,
+        "nombre": "Campera",
+        "precio": 50000,
+        "stock": 3
+    },
+    {   
+        "codigo": 4,
+        "nombre": "Zapatillas",
+        "precio": 23000,
+        "stock": 4
+    },
+    {   
+        "codigo": 5,
+        "nombre": "Billetera",
+        "precio": 3000,
+        "stock": 30
+    }
+]
