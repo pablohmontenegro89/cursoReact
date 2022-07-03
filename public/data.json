@@ -1,32 +1,72 @@
 [
     {
         "codigo": 1,
-        "nombre": "Pantalón",
+        "nombre": "Alcohol",
         "precio": 25000,
-        "stock": 8
+        "stock": 8,
+        "imagen": "https://i.ibb.co/98V6gvT/bialcohol-etilico.jpg"
     },
     {   
         "codigo": 2,
-        "nombre": "Remera",
+        "nombre": "Fósforos",
         "precio": 7000,
-        "stock": 26
+        "stock": 26,
+        "imagen": "https://i.ibb.co/z2PjGPb/fosforos.jpg"
     },
     {   
         "codigo": 3,
-        "nombre": "Campera",
+        "nombre": "Desodorante",
         "precio": 50000,
-        "stock": 3
+        "stock": 3,
+        "imagen": "https://i.ibb.co/ZSXDHp0/aerosol.jpg"
     },
     {   
         "codigo": 4,
-        "nombre": "Zapatillas",
+        "nombre": "Jabón Blanco",
         "precio": 23000,
-        "stock": 4
+        "stock": 4,
+        "imagen": "https://i.ibb.co/ccjJQ9L/jabon-blanco.jpg"
     },
     {   
         "codigo": 5,
-        "nombre": "Billetera",
+        "nombre": "Insecticida",
         "precio": 3000,
-        "stock": 30
+        "stock": 35,
+        "imagen": "https://i.ibb.co/VVS3Wbx/insecticida.jpg"
+    },
+    {   
+        "codigo": 6,
+        "nombre": "Lavandina",
+        "precio": 3000,
+        "stock": 50,
+        "imagen": "https://i.ibb.co/f4ZX1BB/lavandina.jpg"
+    },
+    {   
+        "codigo": 7,
+        "nombre": "Kit de limpieza",
+        "precio": 3000,
+        "stock": 18,
+        "imagen": "https://i.ibb.co/zX8GMZK/kit-limpieza.jpg"
+    },
+    {   
+        "codigo": 8,
+        "nombre": "Champú",
+        "precio": 3000,
+        "stock": 12,
+        "imagen": "https://i.ibb.co/qDhxjKD/champu.jpg"
+    },
+    {   
+        "codigo": 9,
+        "nombre": "Virulana",
+        "precio": 3000,
+        "stock": 61,
+        "imagen": "https://i.ibb.co/wKFVVpB/virulana.jpg"
+    },
+    {   
+        "codigo": 10,
+        "nombre": "Bolsa residuo",
+        "precio": 3000,
+        "stock": 31,
+        "imagen": "https://i.ibb.co/Mk8HzJ0/bolsa-residuos.jpg"
     }
 ]
