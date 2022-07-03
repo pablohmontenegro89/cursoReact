@@ -1,10 +1,9 @@
-import './ItemList.css'
-import Product from './Product'
 import React, { useState, useEffect } from 'react';
 import Row from 'react-bootstrap/Row';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 
-function Body(){
+function ItemList(){
     
     const [info, setInfo] = useState()
 
@@ -18,12 +17,12 @@ function Body(){
 
     return(
         <>
-        <h2>Listado de productos</h2>
+        <h2>Detalle de un producto, desafío clase 7</h2>
         <Row xs={1} md={2} className="g-4 itemlist">
-            {info && info.map(i => <Product product={i.nombre} price={i.precio} imagen={i.imagen} stock={i.stock} />)}
+            {info && info.map(i => (i.nombre=="Alcohol" && <ItemDetail product={i.nombre} price={i.precio} imagen={i.imagen} detalle={i.detalle} />))}
         </Row>
         </>
     );
 }
 
-export default Body;
+export default ItemList;

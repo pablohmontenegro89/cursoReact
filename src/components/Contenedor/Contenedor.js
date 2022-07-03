@@ -1,5 +1,5 @@
 import {useState} from "react";
-import Hello from "./Hello";
+import Hello from "../Hello";
 
 function Contenedor() {
     const [name, setName] = useState('React')
