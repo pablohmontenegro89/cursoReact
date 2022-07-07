@@ -1,29 +1,13 @@
-import './ItemList.css'
-import Product from '../Product/Product'
-import React, { useState, useEffect } from 'react';
-import Row from 'react-bootstrap/Row';
+import React from'react';
+import {Item} from '../Item/Item';
 
 
-function ItemList(){
-    
-    const [info, setInfo] = useState()
-
-    useEffect(() => {
-        fetch('data.json')
-        .then(resp => resp.json())
-        .then(data=> {setTimeout(function(){
-            setInfo(data)
-        }, 2000);})
-    }, []);
-
-    return(
-        <>
-        <h2>Listado de productos</h2>
-        <Row xs={1} md={2} className="g-4 itemlist">
-            {info && info.map(i => <Product product={i.nombre} price={i.precio} imagen={i.imagen} stock={i.stock} />)}
-        </Row>
-        </>
-    );
-}
-
-export default ItemList;
+export const ItemList = ({items}) => {
+ return (
+    <section className="flex-row">
+    {items?.map((item) => (
+        <Item {... item} key={item.id} />
+    ))}
+   </section>
+        
+      )}

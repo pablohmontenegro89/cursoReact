@@ -1,28 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import Row from 'react-bootstrap/Row';
-import ItemDetail from '../ItemDetail/ItemDetail';
+import React, {useState,useEffect} from'react';
+import {ItemDetail} from '../ItemDetail/ItemDetail';
+import {data} from '../../data/data';
+import { useParams } from 'react-router-dom';
 
-
-function ItemList(){
-    
-    const [info, setInfo] = useState()
-
+export const ItemDetailContainer = () => {
+    const [product, setProduct] = useState({});
+    const [loading, setLoading] = useState(true);
+  
+    const { itemId } = useParams();
+  
+    console.log(itemId);
+  
     useEffect(() => {
-        fetch('data.json')
-        .then(resp => resp.json())
-        .then(data=> {setTimeout(function(){
-            setInfo(data)
-        }, 2000);})
-    }, []);
-
-    return(
-        <>
-        <h2>Detalle de un producto, desafío clase 7</h2>
-        <Row xs={1} md={2} className="g-4 itemlist">
-            {info && info.map(i => (i.nombre=="Alcohol" && <ItemDetail product={i.nombre} price={i.precio} imagen={i.imagen} detalle={i.detalle} />))}
-        </Row>
-        </>
-    );
-}
-
-export default ItemList;
+      setLoading(true);
+      const getItems = new Promise((resolve) => {
+        setTimeout(() => {
+          const myData = data.find((item) => item.id === itemId);
+            
+          resolve(myData);
+        }, 1000);
+      });
+  
+      getItems
+        .then((res) => {
+          setProduct(res);
+        })
+        .finally(() => setLoading(false));
+    }, [itemId]);
+  
+    return loading ? <h2>CARGANDO...</h2> : <ItemDetail {...product} />;
+  };
+  
