@@ -30,3 +30,14 @@ export const NavBar = () => {
     </section>
   );
 };
+
+/*
+CON REACT BOOTSTRAP PUEDEN HACER ESTO
+<Nav.Link as={NavLink} to='/algo'>
+TEXTO
+</Nav.Link>
+<NavDropdown.Item as={Link}
+to="#action/3.1">Action</NavDropdown.Item>
+CON BOOTSTRAP SOLO AGREGUENLE LAS CLASESALINK
+<Link className="">mi link</Link>
+*/

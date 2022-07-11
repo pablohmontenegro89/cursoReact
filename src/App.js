@@ -4,6 +4,7 @@ import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailCo
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { NavBar } from './components/NavBar/NavBar';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
 
         {/* vista de detalle */}
         <Route path="/product/:itemId" element={<ItemDetailContainer />} />
+
+        {/* Acá se confirma la compra */}
+        <Route path="/cart" element={<Cart />} />
 
         {/* para evitar navegar a rutas que no existen. pueden usar un mensaje de error en vez del navigate que reditecciona */}
         <Route path="*" element={<Navigate to="/" />} />
