@@ -1,8 +1,10 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom';
+import {CartContext} from '../../contexts/CartContext'
 
 function Contador(product) {
+    const {addToCart} = useContext(CartContext)
     const [num, setNum] = useState(0)
     const sumar = () => 
     num<product.stock 
@@ -14,7 +16,7 @@ function Contador(product) {
         confirmButtonText: 'Cool'
       })
     const restar = () => num>0 && setNum(num-1)
-    const onAdd = () => product.onSaveCarrito(true)
+    const onAdd = ()=> addToCart(product.name, num)
     return ( 
     <>
         <p>{product.stock > 1 ? `${product.stock} unidades disponibles` : `${product.stock} unidad disponible`}</p>

@@ -5,10 +5,12 @@ import {ItemListContainer} from './components/ItemListContainer/ItemListContaine
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { NavBar } from './components/NavBar/NavBar';
 import Cart from './components/Cart/Cart';
+import {CartProvider} from "./contexts/CartContext";
+
 
 function App() {
   return (
-    /* envolvemos todo en BrowserRouter */
+    <CartProvider>
     <BrowserRouter>
       {/* La Navbar afuera de Routes para que se muestre en todas las rutas */}
       <NavBar />
@@ -34,6 +36,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 

@@ -23,7 +23,7 @@ export const ItemListContainer = ({ greeting }) => {
             : data;
   
           resolve(myData);
-        }, 1000);
+        }, 300);
       });
   
       getItems

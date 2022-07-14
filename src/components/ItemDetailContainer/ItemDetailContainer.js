@@ -18,7 +18,7 @@ export const ItemDetailContainer = () => {
           const myData = data.find((item) => item.id === itemId);
             
           resolve(myData);
-        }, 1000);
+        }, 300);
       });
   
       getItems
