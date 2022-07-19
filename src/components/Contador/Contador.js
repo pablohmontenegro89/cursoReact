@@ -16,7 +16,7 @@ function Contador(product) {
         confirmButtonText: 'Cool'
       })
     const restar = () => num>0 && setNum(num-1)
-    const onAdd = ()=> addToCart(product.name, num)
+    const onAdd = ()=> addToCart(product.name, num, product.id, product.price)
     return ( 
     <>
         <p>{product.stock > 1 ? `${product.stock} unidades disponibles` : `${product.stock} unidad disponible`}</p>
