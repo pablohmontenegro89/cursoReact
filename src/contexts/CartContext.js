@@ -7,6 +7,8 @@ const {Provider} = CartContext
 export const CartProvider=({defaultValue=[],children})=> {
 
     const [cart, setCart] = useState(defaultValue)
+    const [buy, setBuy] = useState(false)
+    const [total,setTotal] = useState(null)
 
     const clearCart = () => {
         setCart([])
@@ -39,16 +41,26 @@ export const CartProvider=({defaultValue=[],children})=> {
 
     const totalAPagar = () => {
         if (cart.length>0){
-        return cart.reduce((acum,el)=> {return (acum + el.quantity * el.price)},0)
+            setTotal(cart.reduce((acum,el)=> {return (acum + el.quantity * el.price)},0))
+        return total
         }
     }
+
+    const mostrarCarrito = () => {
+        setBuy(true) 
+        return buy}
+    const finalizarCompra = () => {
+        setBuy(false)
+        return buy}
 
     const context = {
         cart,
         clearCart,
         addToCart,
         deleteElement,
-        totalAPagar
+        totalAPagar,
+        mostrarCarrito,
+        finalizarCompra
     }
 
     return(

@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { NavBar } from './components/NavBar/NavBar';
 import Cart from './components/Cart/Cart';
 import {CartProvider} from "./contexts/CartContext";
+import ClientInfo from './components/ClientInfo/ClientInfo';
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
 
         {/* Acá se confirma la compra */}
         <Route path="/cart" element={<Cart />} />
+
+        {/* Acá se termina la compra */}
+        <Route path="/mandar" element={<ClientInfo />} />
 
         {/* para evitar navegar a rutas que no existen. pueden usar un mensaje de error en vez del navigate que reditecciona */}
         <Route path="*" element={<Navigate to="/" />} />

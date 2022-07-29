@@ -11,6 +11,7 @@ export const NavBar = () => {
     { id: '123asf', address: '/category/A', text: 'CATEGORIA A' },
     { id: 'sgs3q3', address: '/category/B', text: 'CATEGORIA B' },
     { id: 'gkl98s', address: '/category/C', text: 'CATEGORIA C' },
+    { id: 'wfedfr', address: '/cart', text: 'CART' },
   ];
 
   return (

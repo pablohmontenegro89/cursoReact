@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { addDoc, getFirestore, collection, getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDAAQpwzonpulhYBqKA0XQZmgIJCgEHs6s",
@@ -13,15 +13,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
-export function testDB(){
-    console.log(db)
+export async function getAllProducts(){
+  const productsCollectionRef = collection(db, "productos")
+  const docSnapshot = await getDocs(productsCollectionRef)
+  const dataProducts = docSnapshot.docs.map( item => item.data())
+  return dataProducts
 }
 
-export async function getAllCities(){
-  const citiesCollectionRef = collection(db, "productos")
-  const docSnapshot = await getDocs(citiesCollectionRef)
-  const dataCities = docSnapshot.docs.map( item => item.data())
-  return dataCities
+export function saveOrder(orden){
+  const ordersCollectionRef = collection(db, "orders")
+  addDoc(ordersCollectionRef, orden)
 }
 
 export default db

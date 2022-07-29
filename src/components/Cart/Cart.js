@@ -1,6 +1,7 @@
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {CartContext} from '../../contexts/CartContext'
 import { Link } from 'react-router-dom';
+import ClientInfo from '../ClientInfo/ClientInfo'
 
 function Cart() {
     const cart = useContext(CartContext)
@@ -12,10 +13,9 @@ function Cart() {
     const borrarItem = key => {
         cart.deleteElement(key)
       }
-      
+
     if (cart.cart.length>0){  
-    
-    return ( 
+    return (
         <>
         <h2>Carrito</h2>
         <ul>
@@ -30,8 +30,10 @@ function Cart() {
         </ul>
         <button onClick={onDelete}>Vaciar carrito</button>
         <p>Total a pagar {cart.totalAPagar()}</p>
+        <ClientInfo/>  
         </>
-     );}
+     );
+     }
      else return(
         <>
         <h2>No hay items en el carrito</h2>

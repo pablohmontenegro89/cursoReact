@@ -2,7 +2,7 @@ import React, {useState,useEffect} from'react';
 import {ItemList} from '../ItemList/ItemList';
 // import {data} from '../../data/data';
 import { useParams } from 'react-router-dom';
-import { getAllCities } from "../../services/firestore";
+import { getAllProducts } from "../../services/firestore";
 
 export const ItemListContainer = ({ greeting }) => {
     const [items, setItems] = useState([]);
@@ -29,7 +29,7 @@ export const ItemListContainer = ({ greeting }) => {
       //   }, 300);
       // });
 
-      getAllCities()
+      getAllProducts()
       .then(res => {
         const myData = catId
           ? res.filter(item => item.category === catId)
