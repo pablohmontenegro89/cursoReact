@@ -7,25 +7,26 @@ const ClientInfo = () => {
   const [enteredName, setEnteredName] = useState('');    
   const [enteredPhone, setEnteredPhone] = useState();
   const [enteredEmail, setEnteredEmail] = useState('');
+
   const cart = useContext(CartContext)
   console.log(cart)
 
-  const nameChangeHandler = (e) => {
+  const nameChangeHandler = e => {
     setEnteredName(e.target.value)
   }
 
-  const enteredPhoneHandler = (e) => {
+  const enteredPhoneHandler = e => {
     setEnteredPhone(e.target.value)
   }
 
-  const enteredEmailHandler = (e) => {
+  const enteredEmailHandler = e => {
     setEnteredEmail(e.target.value)
   }
 
-  const submitHandler = (event) => {
-    event.preventDefault();
+  const submitHandler = e => {
+    e.preventDefault();
     let compra = {'buyer': {enteredName, enteredPhone, enteredEmail}, 'items': cart.cart, 'date':new Date() ,'total': cart.totalAPagar() }
-    saveOrder(compra)
+    saveOrder(compra).then(({id}) => cart.cargarIdCompra(id))    
     cart.clearCart()
   };
 

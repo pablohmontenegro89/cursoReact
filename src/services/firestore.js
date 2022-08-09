@@ -13,6 +13,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
+
 export async function getAllProducts(){
   const productsCollectionRef = collection(db, "productos")
   const docSnapshot = await getDocs(productsCollectionRef)
@@ -22,7 +23,7 @@ export async function getAllProducts(){
 
 export function saveOrder(orden){
   const ordersCollectionRef = collection(db, "orders")
-  addDoc(ordersCollectionRef, orden)
+  return addDoc(ordersCollectionRef, orden)
 }
 
 export default db

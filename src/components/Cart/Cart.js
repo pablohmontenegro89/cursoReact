@@ -1,4 +1,4 @@
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {CartContext} from '../../contexts/CartContext'
 import { Link } from 'react-router-dom';
 import ClientInfo from '../ClientInfo/ClientInfo'
@@ -36,6 +36,7 @@ function Cart() {
      }
      else return(
         <>
+        <h3>id de la última compra: {cart.mostrarIdCompra()}</h3>
         <h2>No hay items en el carrito</h2>
         <Link to={`/`}>
            <h1>Volver a landing</h1>

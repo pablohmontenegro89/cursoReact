@@ -9,6 +9,7 @@ export const CartProvider=({defaultValue=[],children})=> {
     const [cart, setCart] = useState(defaultValue)
     const [buy, setBuy] = useState(false)
     const [total,setTotal] = useState(null)
+    const [idCompra, setidCompra] = useState('');
 
     const clearCart = () => {
         setCart([])
@@ -53,6 +54,12 @@ export const CartProvider=({defaultValue=[],children})=> {
         setBuy(false)
         return buy}
 
+    const cargarIdCompra = (id) => {
+        setidCompra(id)
+        }
+    
+    const mostrarIdCompra = () => idCompra
+
     const context = {
         cart,
         clearCart,
@@ -60,7 +67,9 @@ export const CartProvider=({defaultValue=[],children})=> {
         deleteElement,
         totalAPagar,
         mostrarCarrito,
-        finalizarCompra
+        finalizarCompra,
+        cargarIdCompra,
+        mostrarIdCompra,
     }
 
     return(
